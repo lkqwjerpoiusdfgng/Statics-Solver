@@ -26,19 +26,21 @@
 
 using namespace std;
 
-// Pre-declaration
+// Pre-declarations
 bool setTitle(string, float);
 void welcome();
+bool showMenu();
 
 /* MAIN PROGRAM FUNCTION */
 int main(void)
 {
-	/* Program initialization */
+	/* Program Initialization */
 
 	// Housekeeping Variables
 	const float VERSION = 0.1f;			// Program version number
 	const string CONSOLE_TITLE			
 		= "Statics Solver - Version ";  // Text title for console window
+	bool finished = false;				// For Menu Loop below
 
 	// Set console title
 	if (!setTitle(CONSOLE_TITLE, VERSION)) 
@@ -48,6 +50,12 @@ int main(void)
 
 	// Display welcome information
 	welcome();
+
+	/* Program Menu Loop */
+
+	do {
+		finished = showMenu();
+	} while (!finished);
 
 	system("pause");
 
@@ -87,4 +95,11 @@ bool setTitle(string title, float version)
 void welcome()
 {
 
+}
+
+
+/* showMenu() Function: Display main menu and initiate program functions */
+bool showMenu()
+{
+	
 }
