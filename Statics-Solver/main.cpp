@@ -16,6 +16,12 @@
  */
 
 /* INCLUDES */
+
+// StaticsSolver classes
+#include "staticSolver.h"
+
+
+// Library items (std and Windows)
 #include <iostream>
 #include <Windows.h>	
 #include <stdio.h>
@@ -25,12 +31,15 @@
 #include <conio.h>
 #include <iomanip>		// std::setw
 
+
+
 using namespace std;
 
 // Forward declarations
 bool setTitle(string, float);
 void showWelcome(float, string);
 bool showMenu();
+void showHelp();
 
 /* MAIN PROGRAM FUNCTION */
 int main(void)
@@ -158,10 +167,11 @@ bool showMenu()
 		<< "item you wish to choose and pressing enter.\n\n";
 
 	// Menu options
-	cout << "1. Solve a basic statics problem\n"
-		<< "2. Display Program Information\n"
-		<< "3. Display Program Help\n"
-		<< "4. Exit the program\n\n\n";
+	cout << "1. Solve a 2D statics problem\n"
+		<< "2. Solve a 3D statics problem\n"
+		<< "3. Display Program Info\n"
+		<< "4. Display Program Help\n"
+		<< "5. Exit the program\n\n\n";
 
 	// Get selection
 	cout << "Pleae enter your selection: ";
@@ -171,16 +181,23 @@ bool showMenu()
 	switch (selection)
 	{
 
-		case 1:			// Solve Basic Statics Problem
+		case 1:			// Solve 2D Statics Problem
+			staticSolver("2D");
 			break;
 
-		case 2:			// Display Program Info
+		case 2:			// Solve 3D Statics Problem
+			staticSolver("3D");
 			break;
 
-		case 3:			// Display Program Help
+		case 3:			// Display Program Info
+			showWelcome();
 			break;
 
-		case 4:			// Exit the Program 
+		case 4:			// Display Program Help
+			showHelp();
+			break;
+
+		case 5:			// Exit the Program 
 			exit(0);
 			break;
 
