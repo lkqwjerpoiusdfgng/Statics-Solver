@@ -6,7 +6,7 @@
  *		  Author: Craig Medlin (PR0ficiency)
  *			      http://www.CraigMedlin.com
  *		 License: MIT
- * Last Modified: July 18, 2015
+ * Last Modified: July 22, 2015
  *
  *	 Description: A command-line, Windows-based 
  *				  C++ program to solve typical 
@@ -17,18 +17,19 @@
 
 /* INCLUDES */
 #include <iostream>
-#include <Windows.h>
+#include <Windows.h>	
 #include <stdio.h>
 #include <string>
 #include <tchar.h>
 #include <strsafe.h>
 #include <conio.h>
+#include <iomanip>		// std::setw
 
 using namespace std;
 
-// Pre-declarations
+// Forward declarations
 bool setTitle(string, float);
-void welcome();
+void showWelcome(float, string);
 bool showMenu();
 
 /* MAIN PROGRAM FUNCTION */
@@ -38,6 +39,8 @@ int main(void)
 
 	// Housekeeping Variables
 	const float VERSION = 0.1f;			// Program version number
+	const string LAST_MODIFIED 
+		= "July 22, 2015";				// Date last modified
 	const string CONSOLE_TITLE			
 		= "Statics Solver - Version ";  // Text title for console window
 	bool finished = false;				// For Menu Loop below
@@ -49,7 +52,7 @@ int main(void)
 	}
 
 	// Display welcome information
-	welcome();
+	showWelcome(VERSION, LAST_MODIFIED);
 
 	/* Program Menu Loop */
 
@@ -68,7 +71,7 @@ int main(void)
  *		title: String that acts as the main part of the title 
  *	  version: Float value of program version number
  *
- *		Returns true on success
+ *		RETURNS true on success
  */
 
 bool setTitle(string title, float version)
@@ -92,14 +95,101 @@ bool setTitle(string title, float version)
 
 /* welcome() Function: Displays general program information */
 
-void welcome()
+void showWelcome(float version, string lastModified)
 {
+	// Local formatting variables
+	const char SEPARATOR = ' ';
+	const int TITLE_WIDTH = 18;
+	const int DATA_WIDTH = 32;
+	ios::fmtflags f(cout.flags());
+	
+	// Display program information
+	for (int i = 0; i < 50; i++) { cout << "*"; }
+	cout << "\n";
+	for (int i = 0; i < 18; i++) { cout << " "; }
+	cout << "Statics Solver\n";
+	for (int i = 0; i < 50; i++) { cout << "*"; }
+	cout << "\n\n";
 
+	cout << right << setw(TITLE_WIDTH) <<  "Version: ";
+	cout << left <<   version << " (initial stages)\n";
+	cout << right << setw(TITLE_WIDTH) <<  "Author: ";
+	cout << left <<   "Craig Medlin\n";
+	cout << right << setw(TITLE_WIDTH) <<  " ";
+	cout << left <<   "www.craigmedlin.com\n\n";
+	cout << right << setw(TITLE_WIDTH) <<  "License: ";
+	cout << left <<   "MIT\n";
+	cout << right << setw(TITLE_WIDTH) <<  "Last Modified: ";
+	cout << left <<   lastModified << "\n\n";
+	cout << right << setw(TITLE_WIDTH) <<  "Description: ";
+	cout << left <<   "A command-line, Windows-based\n";
+	cout << right << setw(TITLE_WIDTH) <<  "";
+	cout << left <<   "C++ program to solve typical\n";
+	cout << right << setw(TITLE_WIDTH) <<  "";
+	cout << left <<   "problems from introductory\n";
+	cout << right << setw(TITLE_WIDTH) <<  " ";
+	cout << left <<   "engineering statics.";
+
+	cout.flags(f);
+	cout << "\n\n\n";
+
+	system("pause"); // Wait for keypress
+	system("cls");	 // Clear console
 }
 
 
 /* showMenu() Function: Display main menu and initiate program functions */
 bool showMenu()
 {
+	// Local variables
+	int selection = 0;
 	
+	// Display header information
+	for (int i = 0; i < 50; i++) { cout << "*"; }
+	cout << "\n";
+	for (int i = 0; i < 11; i++) { cout << " "; }
+	cout << "Statics Solver: Main Menu\n";
+	for (int i = 0; i < 50; i++) { cout << "*"; }
+	cout << "\n\n\n";
+	
+	// Menu instructions	
+	cout << "Please choose one of the following options\n"
+		<< "by pressing the number corresponding to the\n"
+		<< "item you wish to choose and pressing enter.\n\n";
+
+	// Menu options
+	cout << "1. Solve a basic statics problem\n"
+		<< "2. Display Program Information\n"
+		<< "3. Display Program Help\n"
+		<< "4. Exit the program\n\n\n";
+
+	// Get selection
+	cout << "Pleae enter your selection: ";
+	cin >> selection;
+
+	// Handle selection
+	switch (selection)
+	{
+
+		case 1:			// Solve Basic Statics Problem
+			break;
+
+		case 2:			// Display Program Info
+			break;
+
+		case 3:			// Display Program Help
+			break;
+
+		case 4:			// Exit the Program 
+			exit(0);
+			break;
+
+		default: 
+			cout << "You did not enter a valid option. Please\n"
+				<< "review the instructions and try again.\n";
+			system("pause");
+			break;
+	}
+
+	return 1;
 }
