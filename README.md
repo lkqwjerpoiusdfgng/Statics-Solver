@@ -45,7 +45,7 @@ Statics Solver is a command-line (currently), Windows-based C++ program to solve
 - [ ] Build Core Programming (statics with point loads & simply-supported beams)
 - [ ] Integrate more types of supports
 - [ ] Integrate support for mixed unit types
-- 
+
 ### Future To-Dos
 - [ ] Develop documentation
 - [ ] Develop help function
