@@ -1,5 +1,6 @@
 # Statics-Solver
 **Current Status:** Nonfunctional
+
 **Version:** 0.1
 
 Statics Solver is a work-in-progress project intended as a foundation for future, more developed engineering education programs. 
@@ -41,12 +42,13 @@ Statics Solver is a command-line (currently), Windows-based C++ program to solve
   * Moment Diagrams
 *
 
-### Current To-Dos
+### To-Dos
+**Current**
 - [ ] Build Core Programming (statics with point loads & simply-supported beams)
 - [ ] Integrate more types of supports
 - [ ] Integrate support for mixed unit types
 
-### Future To-Dos
+**Future**
 - [ ] Develop documentation
 - [ ] Develop help function
 - [ ] Develop built-in examples
