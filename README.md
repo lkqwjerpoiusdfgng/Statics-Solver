@@ -8,7 +8,7 @@ Statics Solver is a work-in-progress project intended as a foundation for future
 ### Overview
 Statics Solver is a command-line (currently), Windows-based C++ program to solve typical problems from introductory engineering mechanics courses. The goal of this project is to develop extendable logic that can be implemented in engineering education software for assisting students in visualizing and solving problems. At completion, the project should be able to solve basic problems from statics & mechanics of materials courses.
 
-##### Planned Features
+#### Planned Features
 **General**
 * Solve for force/stress/strain/deformations in 2D & 3D problems
   * Beams
@@ -40,7 +40,6 @@ Statics Solver is a command-line (currently), Windows-based C++ program to solve
   * Graphs
   * Shear Diagrams
   * Moment Diagrams
-*
 
 ### To-Dos
 **Current**
