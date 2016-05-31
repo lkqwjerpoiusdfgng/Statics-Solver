@@ -6,7 +6,7 @@
  *		  Author: Craig Medlin (PR0ficiency)
  *			      http://www.CraigMedlin.com
  *		 License: MIT
- * Last Modified: May 30, 2016
+ * Last Modified: July 22, 2015
  *
  *	 Description: A command-line, Windows-based 
  *				  C++ program to solve typical 
@@ -41,17 +41,17 @@ void showWelcome(float, string);
 bool showMenu();
 void showHelp();
 
-// Housekeeping Variables
-static const float VERSION = 0.1f;			// Program version number
-static const string LAST_MODIFIED
-			= "May 30, 2016";				// Date last modified
-static const string CONSOLE_TITLE
-			= "Statics Solver - Version ";  // Text title for console window
-
 /* MAIN PROGRAM FUNCTION */
 int main(void)
 {
 	/* Program Initialization */
+
+	// Housekeeping Variables
+	const float VERSION = 0.1f;			// Program version number
+	const string LAST_MODIFIED 
+		= "July 22, 2015";				// Date last modified
+	const string CONSOLE_TITLE			
+		= "Statics Solver - Version ";  // Text title for console window
 	bool finished = false;				// For Menu Loop below
 
 	// Set console title
@@ -190,7 +190,7 @@ bool showMenu()
 			break;
 
 		case 3:			// Display Program Info
-			showWelcome(VERSION, LAST_MODIFIED);
+			showWelcome();
 			break;
 
 		case 4:			// Display Program Help

@@ -68,12 +68,16 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="material.cpp" />
+    <ClCompile Include="staticSolver.cpp" />
     <ClCompile Include="structure.cpp" />
+    <ClCompile Include="structure3D.cpp" />
     <ClCompile Include="support.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="material.h" />
+    <ClInclude Include="staticSolver.h" />
     <ClInclude Include="structure.h" />
+    <ClInclude Include="structure3D.h" />
     <ClInclude Include="support.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
