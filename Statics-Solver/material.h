@@ -5,8 +5,10 @@ class material
 {
 private:
 	/* Private Variables */
-	std::string name;
-	double density;
+	  std::string name;		// Material Name
+			double rho;		// Density
+			  double E;		// Young's Modulus
+			  double G;		// Shear Modulus
 
 public:
 	/* Constructors */

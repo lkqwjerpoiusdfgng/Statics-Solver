@@ -1,49 +1,65 @@
+/***************************************
+ * The purpose of the structure class
+ * is to lay the framework for solving
+ * statics problems. It will obtain 
+ * initial information from the user
+ * regarding the problem to be solved
+ * and orchestrate the creation and 
+ * management of the necessary objects
+ * to solve the problems.
+ */
+
+
 #ifndef STRUCTURE_H
 #define STRUCTURE_H
 
-#include "material.h"
+#include <string>
 #include <vector>
-#include "support.h"
+#include "structure.h"
+#include "material.h"
 
-class structure 
-{
+class structure {
 	private:
-		/* Private Functions */
-		virtual bool setDimen(double, double);
-		virtual bool calcArea();
-
 		/* Private Variables */
-		material mat;
-		double width;
-		double height;
-		double area;
-		double centroid[3];
-		double origin[3];
+		std::string unitSystem;
+		int precision;
+		int dimensions;
+		double totalMass;
+		double totalArea;
+		double totalVolume;
 		int totalForces;
 		int totalUnknowns;
-		std::vector<support *> supports;
+		double origin[3];
+		double momentOfInertia;
+		std::vector<structure *> itsStructures;
+		std::vector<material *> materials;
 
-	public: 
 
+		/* Private Functions */
+		bool setPrecision(int);
+		bool setOrigin(double[]);
+		bool updateArea(double);
+		bool updateMass(double);
+		bool updateVolume(double);
+
+
+	public:
 		/* Constructors */
 		structure();
-		structure(double, double, material);
+		structure(std::string);
+		structure(int);
+		structure(std::string, int, int);
 
 		/* Destructor */
 		~structure();
 
 		/* Public Functions */
+		double getMass();
 		double getArea();
-		double getWidth();
-		double getHeight();
-		double* getCentroid();
-		material getMaterial();
-		double* getPosition();
-
-		bool setWidth(double);
-		bool setHeight(double);
-		bool setPosition(double[]);
-
+		double getVolume();
+		double* getOrigin();
+		int getPrecision();
 };
+
 
 #endif

@@ -1,25 +1,70 @@
 #include "structure.h"
+#include <string>
 
-bool structure::setDimen(double, double)
+/* Global Constants */
+static const std::string METRIC = "Metric";
+static const std::string FPS = "Foot-Pound-Second";
+
+
+/* Private Functions */
+
+bool structure::setPrecision(int)
 {
 	return false;
 }
 
-bool structure::calcArea()
+bool structure::setOrigin(double[])
 {
 	return false;
 }
 
+bool structure::updateArea(double)
+{
+	return false;
+}
+
+bool structure::updateMass(double)
+{
+	return false;
+}
+
+bool structure::updateVolume(double)
+{
+	return false;
+}
+
+/* CONSTRUCTORS */
 structure::structure()
 {
+
 }
 
-structure::structure(double, double, material)
+structure::structure(std::string units)
 {
+
 }
 
+structure::structure(int dimensions) 
+{
+
+}
+
+structure::structure(std::string units = METRIC, int dimensions = 2, int precision = 2)
+{
+
+}
+
+/* DESTRUCTOR */
 structure::~structure()
 {
+
+}
+
+/* Public Functions */
+
+double structure::getMass()
+{
+	return 0.0;
 }
 
 double structure::getArea()
@@ -27,32 +72,17 @@ double structure::getArea()
 	return 0.0;
 }
 
-double structure::getWidth()
+double structure::getVolume()
 {
 	return 0.0;
 }
 
-double structure::getHeight()
-{
-	return 0.0;
-}
-
-material structure::getMaterial()
-{
-	return material();
-}
-
-double * structure::getPosition()
+double * structure::getOrigin()
 {
 	return nullptr;
 }
 
-bool structure::setWidth(double)
+int structure::getPrecision()
 {
-	return false;
-}
-
-bool structure::setHeight(double)
-{
-	return false;
+	return 0;
 }
